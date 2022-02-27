@@ -5,7 +5,7 @@ using UnityEngine;
 
 #region Scriptable Object
 
-[CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
+[CreateAssetMenu(fileName = "New Inventory", menuName = "Scriptable Objects/Inventory")]
 public class InventoryObject : ScriptableObject
 {
     public List<InventorySlot> inventoryList = new List<InventorySlot>();

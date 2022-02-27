@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private Vector3 firstItemSlotPos;
     [SerializeField]
-    private Vector3 spaceBetweenItemSlots;
+    private Vector3 itemSlotDimensions;
     [SerializeField]
     private int numInventoryColumns;
 
@@ -79,7 +79,7 @@ public class Inventory : MonoBehaviour
     private Vector3 GetPosition(int i)
     {
         //Calculate the position of each added item on the canvas, based on the first item's position, the local space between items, and the number of columns
-        return new Vector3(firstItemSlotPos.x + (spaceBetweenItemSlots.x * (i % numInventoryColumns)), firstItemSlotPos.y + (-spaceBetweenItemSlots.y * (i/numInventoryColumns)), 0f);
+        return new Vector3(firstItemSlotPos.x + (itemSlotDimensions.x * (i % numInventoryColumns)), firstItemSlotPos.y + (-itemSlotDimensions.y * (i/numInventoryColumns)), 0f);
     }
 
     #endregion

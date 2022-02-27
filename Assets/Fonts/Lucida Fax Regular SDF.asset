@@ -115,9 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Lucida Fax Regular SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 2131225762
   material: {fileID: -159928960554538795}
-  materialHashCode: 0
+  materialHashCode: 2036979010
   m_Version: 1.1.0
   m_SourceFontFileGUID: 3e302bf2f95a6504f9e2e11003ddc37a
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 3e302bf2f95a6504f9e2e11003ddc37a, type: 3}

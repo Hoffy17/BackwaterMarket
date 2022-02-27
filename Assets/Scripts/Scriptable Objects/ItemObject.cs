@@ -29,7 +29,7 @@ public enum ItemRarity
 
 #region Scriptable Object
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory System/Item")]
+[CreateAssetMenu(fileName = "New Item", menuName = "Scriptable Objects/Item")]
 public class ItemObject : ScriptableObject
 {
     public GameObject prefab;
