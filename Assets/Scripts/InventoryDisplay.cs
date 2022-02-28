@@ -85,23 +85,12 @@ public class InventoryDisplay : MonoBehaviour
         obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
         //Add the new item to the dictionary
         itemsDisplayed.Add(inventory.inventoryList[i], obj);
-
-        SetItemComponents(i);
     }
 
     private Vector3 GetPosition(int i)
     {
         //Calculate the position of each added item on the canvas, based on the first item's position, the local space between items, and the number of columns
         return new Vector3(firstItemSlotPos.x + (spaceBetweenItemSlots.x * (i % numInventoryColumns)), firstItemSlotPos.y + (-spaceBetweenItemSlots.y * (i/numInventoryColumns)), 0f);
-    }
-
-    private void SetItemComponents(int i)
-    {
-        inventory.inventoryList[i].item.prefab.GetComponent<ItemDisplay>().itemTypeText = itemTypeText;
-        inventory.inventoryList[i].item.prefab.GetComponent<ItemDisplay>().itemArtwork = itemArtwork;
-        inventory.inventoryList[i].item.prefab.GetComponent<ItemDisplay>().itemConditionText = itemConditionText;
-        inventory.inventoryList[i].item.prefab.GetComponent<ItemDisplay>().itemRarityText = itemRarityText;
-        inventory.inventoryList[i].item.prefab.GetComponent<ItemDisplay>().itemBuyingPriceText = itemBuyingPriceText;
     }
 
     #endregion

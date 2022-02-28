@@ -7,12 +7,25 @@ using TMPro;
 public class ItemDisplay : MonoBehaviour
 {
     public ItemObject item;
+    public InventoryDisplay inventoryDisplay;
 
+    [Header("Item Panel GUI")]
     public TextMeshProUGUI itemTypeText;
     public Image itemArtwork;
     public TextMeshProUGUI itemConditionText;
     public TextMeshProUGUI itemRarityText;
     public TextMeshProUGUI itemBuyingPriceText;
+
+    private void Awake()
+    {
+        inventoryDisplay = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryDisplay>();
+
+        itemTypeText = inventoryDisplay.itemTypeText;
+        itemArtwork = inventoryDisplay.itemArtwork;
+        itemConditionText = inventoryDisplay.itemConditionText;
+        itemRarityText = inventoryDisplay.itemRarityText;
+        itemBuyingPriceText = inventoryDisplay.itemBuyingPriceText;
+    }
 
     public void DisplayItem()
     {
