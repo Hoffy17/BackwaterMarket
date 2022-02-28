@@ -7,6 +7,7 @@ public class RequestObject : ScriptableObject
 {
     [Header("Character")]
     public string requesterName;
+    public Sprite characterPortrait;
     [TextArea]
     public string requestMessage;
 

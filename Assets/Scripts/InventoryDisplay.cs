@@ -2,24 +2,35 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-public class Inventory : MonoBehaviour
+public class InventoryDisplay : MonoBehaviour
 {
     #region Declarations
 
     [SerializeField]
     private InventoryObject inventory;
 
+    private ItemDisplay itemDisplay;
+
     [Header("Inventory Setup")]
     [SerializeField]
     private Vector3 firstItemSlotPos;
     [SerializeField]
-    private Vector3 itemSlotDimensions;
+    private Vector3 spaceBetweenItemSlots;
     [SerializeField]
     private int numInventoryColumns;
 
+    [Header("Item Panel GUI")]
+    public TextMeshProUGUI itemTypeText;
+    public Image itemArtwork;
+    public TextMeshProUGUI itemConditionText;
+    public TextMeshProUGUI itemRarityText;
+    public TextMeshProUGUI itemBuyingPriceText;
+
     [NonSerialized]
-    //A dictionary containining a list of items in the inventory scriptable object, and their gameobjects on the canvas
+    //A dictionary containing a list of items in the inventory scriptable object, and their gameobjects on the canvas
     private Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
     #endregion
@@ -74,12 +85,23 @@ public class Inventory : MonoBehaviour
         obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
         //Add the new item to the dictionary
         itemsDisplayed.Add(inventory.inventoryList[i], obj);
+
+        SetItemComponents(i);
     }
 
     private Vector3 GetPosition(int i)
     {
         //Calculate the position of each added item on the canvas, based on the first item's position, the local space between items, and the number of columns
-        return new Vector3(firstItemSlotPos.x + (itemSlotDimensions.x * (i % numInventoryColumns)), firstItemSlotPos.y + (-itemSlotDimensions.y * (i/numInventoryColumns)), 0f);
+        return new Vector3(firstItemSlotPos.x + (spaceBetweenItemSlots.x * (i % numInventoryColumns)), firstItemSlotPos.y + (-spaceBetweenItemSlots.y * (i/numInventoryColumns)), 0f);
+    }
+
+    private void SetItemComponents(int i)
+    {
+        inventory.inventoryList[i].item.prefab.GetComponent<ItemDisplay>().itemTypeText = itemTypeText;
+        inventory.inventoryList[i].item.prefab.GetComponent<ItemDisplay>().itemArtwork = itemArtwork;
+        inventory.inventoryList[i].item.prefab.GetComponent<ItemDisplay>().itemConditionText = itemConditionText;
+        inventory.inventoryList[i].item.prefab.GetComponent<ItemDisplay>().itemRarityText = itemRarityText;
+        inventory.inventoryList[i].item.prefab.GetComponent<ItemDisplay>().itemBuyingPriceText = itemBuyingPriceText;
     }
 
     #endregion
