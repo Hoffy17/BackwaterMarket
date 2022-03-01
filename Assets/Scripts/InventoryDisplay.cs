@@ -5,28 +5,64 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// Handles the display and management of the game's Inventory menu.
+/// </summary>
 public class InventoryDisplay : MonoBehaviour
 {
     #region Declarations
 
+    [Tooltip("The Inventory Object asset associated with this game object.")]
     [SerializeField]
     private InventoryObject inventory;
 
-    private ItemDisplay itemDisplay;
-
     [Header("Inventory Setup")]
+
+    [Tooltip("The position of the item at the top-left of the inventory.")]
     [SerializeField]
     private Vector3 firstItemSlotPos;
+    [Tooltip("The displacement or space between individual item slots in the Inventory menu.")]
     [SerializeField]
-    private Vector3 spaceBetweenItemSlots;
+    private Vector3 itemSlotDispl;
+    [Tooltip("The number of columns in the Inventory menu.")]
     [SerializeField]
     private int numInventoryColumns;
 
+    [Header("Inventory GUI")]
+
+    /// <summary>
+    /// A highlighted UI sprite that confirms the player's selection of an item on the Inventory menu.
+    /// </summary>
+    [Tooltip("A highlighted UI sprite that confirms the player's selection of an item on the Inventory menu.")]
+    [SerializeField]
+    public GameObject inventorySelector;
+
     [Header("Item Panel GUI")]
+
+    /// <summary>
+    /// Displays the name of the selected item inside the Item Panel in the Inventory menu.
+    /// </summary>
+    [Tooltip("Displays the name of the selected item inside the Item Panel in the Inventory menu.")]
     public TextMeshProUGUI itemTypeText;
+    /// <summary>
+    /// Displays large artwork of the selected item inside the Item Panel in the Inventory menu.
+    /// </summary>
+    [Tooltip("Displays large artwork of the selected item inside the Item Panel in the Inventory menu.")]
     public Image itemArtwork;
+    /// <summary>
+    /// Displays the condition of the selected item inside the Item Panel in the Inventory menu.
+    /// </summary>
+    [Tooltip("Displays the condition of the selected item inside the Item Panel in the Inventory menu.")]
     public TextMeshProUGUI itemConditionText;
+    /// <summary>
+    /// Displays the rarity of the selected item inside the Item Panel in the Inventory menu.
+    /// </summary>
+    [Tooltip("Displays the rarity of the selected item inside the Item Panel in the Inventory menu.")]
     public TextMeshProUGUI itemRarityText;
+    /// <summary>
+    /// Displays the buying price of the selected item inside the Item Panel in the Inventory menu.
+    /// </summary>
+    [Tooltip("Displays the buying price of the selected item inside the Item Panel in the Inventory menu.")]
     public TextMeshProUGUI itemBuyingPriceText;
 
     [NonSerialized]
@@ -90,7 +126,7 @@ public class InventoryDisplay : MonoBehaviour
     private Vector3 GetPosition(int i)
     {
         //Calculate the position of each added item on the canvas, based on the first item's position, the local space between items, and the number of columns
-        return new Vector3(firstItemSlotPos.x + (spaceBetweenItemSlots.x * (i % numInventoryColumns)), firstItemSlotPos.y + (-spaceBetweenItemSlots.y * (i/numInventoryColumns)), 0f);
+        return new Vector3(firstItemSlotPos.x + (itemSlotDispl.x * (i % numInventoryColumns)), firstItemSlotPos.y + (-itemSlotDispl.y * (i/numInventoryColumns)), 0f);
     }
 
     #endregion

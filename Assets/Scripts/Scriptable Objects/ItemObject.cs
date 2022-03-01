@@ -4,6 +4,9 @@ using UnityEngine;
 
 #region Enumerators
 
+/// <summary>
+/// The enumerator that defines the item's type. 
+/// </summary>
 public enum ItemType
 {
     None,
@@ -16,6 +19,9 @@ public enum ItemType
     Watch
 }
 
+/// <summary>
+/// The enumerator that defines the item's rarity.
+/// </summary>
 public enum ItemRarity
 {
     Common,
@@ -30,7 +36,7 @@ public enum ItemRarity
 #region Scriptable Object
 
 /// <summary>
-/// A <see cref="ScriptableObject"/> that stores variables that define each item.
+/// A <see cref="ScriptableObject"/> that stores variables that define an item.
 /// </summary>
 [CreateAssetMenu(fileName = "New Item", menuName = "Scriptable Objects/Item")]
 public class ItemObject : ScriptableObject

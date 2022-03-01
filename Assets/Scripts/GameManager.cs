@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Handles the game's primary operations, including balance.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     #region Declarations
+
+    [Header("Balance")]
+
     /// <summary>
     /// How much money the player is currently holding.
     /// </summary>
-    [Header("Balance")]
     [Tooltip("How much money the player is currently holding.")]
     public float balance;
-
+    [Tooltip("How much balance the player begins the game session with.")]
     [SerializeField]
-    [Tooltip("The TextMeshPro text component that displays the player's money balance.")]
+    private float startingBalance;
+    [SerializeField]
+    [Tooltip("The TextMeshPro text component that displays the player's balance.")]
     private TMP_Text balanceTMP;
 
     #endregion
@@ -24,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        balance = 100f;
+        balance = startingBalance;
         PrintBalance();
     }
 
