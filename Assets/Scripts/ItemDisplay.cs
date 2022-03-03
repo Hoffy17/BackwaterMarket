@@ -10,16 +10,25 @@ public class ItemDisplay : MonoBehaviour
 
     /// <summary>
     /// The <see cref="ItemObject"/> asset associated with this game object.
-    /// </summary>
+    /// </summary> 
     [Tooltip("The Item Object asset associated with this game object.")]
     public ItemObject item;
+
     /// <summary>
-    /// The <see cref="InventoryDisplay"/> component in which this item game object will display.
+    /// The <see cref="InventoryDisplay"/> component in which this item game object will display on the Inventory menu.
     /// </summary>
-    [Tooltip("The Inventory Display component in which this item game object will display.")]
-    public InventoryDisplay inventoryDisplay;
+    [Tooltip("The Inventory Display component in which this item game object will display on the Inventory menu.")]
+    public InventoryDisplayPlayer inventoryDisplayPlayer;
+    /// <summary>
+    /// The <see cref="InventoryDisplay"/> component in which this item game object will display on the Buy menu.
+    /// </summary>
+    [Tooltip("The Inventory Display component in which this item game object will display on the Buy menu.")]
+    public InventoryDisplayBuy inventoryDisplayBuy;
+
+    private GameManager gameManager;
 
     [Header("Item Panel GUI")]
+
     /// <summary>
     /// Displays the name of the selected item inside the Item Panel in the Inventory menu.
     /// </summary>
@@ -53,13 +62,29 @@ public class ItemDisplay : MonoBehaviour
 
     private void Awake()
     {
-        inventoryDisplay = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryDisplay>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
-        itemTypeText = inventoryDisplay.itemTypeText;
-        itemArtwork = inventoryDisplay.itemArtwork;
-        itemConditionText = inventoryDisplay.itemConditionText;
-        itemRarityText = inventoryDisplay.itemRarityText;
-        itemBuyingPriceText = inventoryDisplay.itemBuyingPriceText;
+        if (gameManager.inventoryMenu.activeSelf == true)
+        {
+            inventoryDisplayPlayer = GameObject.FindGameObjectWithTag("Player Inventory").GetComponent<InventoryDisplayPlayer>();
+
+            itemTypeText = inventoryDisplayPlayer.itemTypeText;
+            itemArtwork = inventoryDisplayPlayer.itemArtwork;
+            itemConditionText = inventoryDisplayPlayer.itemConditionText;
+            itemRarityText = inventoryDisplayPlayer.itemRarityText;
+            itemBuyingPriceText = inventoryDisplayPlayer.itemBuyingPriceText;
+        }
+
+        if (gameManager.buyMenu.activeSelf == true)
+        {
+            inventoryDisplayBuy = GameObject.FindGameObjectWithTag("Buy Inventory").GetComponent<InventoryDisplayBuy>();
+
+            itemTypeText = inventoryDisplayBuy.itemTypeText;
+            itemArtwork = inventoryDisplayBuy.itemArtwork;
+            itemConditionText = inventoryDisplayBuy.itemConditionText;
+            itemRarityText = inventoryDisplayBuy.itemRarityText;
+            itemBuyingPriceText = inventoryDisplayBuy.itemBuyingPriceText;
+        }
     }
 
     #endregion
@@ -80,8 +105,17 @@ public class ItemDisplay : MonoBehaviour
 
     private void SetSelector()
     {
-        inventoryDisplay.inventorySelector.SetActive(true);
-        inventoryDisplay.inventorySelector.GetComponent<RectTransform>().localPosition = gameObject.GetComponent<RectTransform>().localPosition;
+        if (gameManager.inventoryMenu.activeSelf == true)
+        {
+            inventoryDisplayPlayer.inventorySelector.SetActive(true);
+            inventoryDisplayPlayer.inventorySelector.transform.localPosition = transform.localPosition;
+        }
+
+        if (gameManager.buyMenu.activeSelf == true)
+        {
+            inventoryDisplayBuy.inventorySelector.SetActive(true);
+            inventoryDisplayBuy.inventorySelector.transform.localPosition = transform.localPosition;
+        }
     }
 
     #endregion

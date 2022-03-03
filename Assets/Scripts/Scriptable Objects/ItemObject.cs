@@ -53,9 +53,9 @@ public class ItemObject : ScriptableObject
     [Tooltip("The enumerator that defines the item's type.")]
     public ItemType type;
     /// <summary>
-    /// The sprite that will display in the inventory for this item.
+    /// The sprite that will display for this item in the item panel.
     /// </summary>
-    [Tooltip("The sprite that will display in the inventory for this item.")]
+    [Tooltip("The sprite that will display for this item in the item panel.")]
     public Sprite artwork;
     /// <summary>
     /// The item's condition, as an integer between 0 and 100.

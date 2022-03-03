@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 /// <summary>
 /// Handles the display and management of the game's Inventory menu.
@@ -14,7 +12,7 @@ public class InventoryDisplay : MonoBehaviour
 
     [Tooltip("The Inventory Object asset associated with this game object.")]
     [SerializeField]
-    private InventoryObject inventory;
+    public InventoryObject inventory;
 
     [Header("Inventory Setup")]
 
@@ -36,34 +34,6 @@ public class InventoryDisplay : MonoBehaviour
     [Tooltip("A highlighted UI sprite that confirms the player's selection of an item on the Inventory menu.")]
     [SerializeField]
     public GameObject inventorySelector;
-
-    [Header("Item Panel GUI")]
-
-    /// <summary>
-    /// Displays the name of the selected item inside the Item Panel in the Inventory menu.
-    /// </summary>
-    [Tooltip("Displays the name of the selected item inside the Item Panel in the Inventory menu.")]
-    public TextMeshProUGUI itemTypeText;
-    /// <summary>
-    /// Displays large artwork of the selected item inside the Item Panel in the Inventory menu.
-    /// </summary>
-    [Tooltip("Displays large artwork of the selected item inside the Item Panel in the Inventory menu.")]
-    public Image itemArtwork;
-    /// <summary>
-    /// Displays the condition of the selected item inside the Item Panel in the Inventory menu.
-    /// </summary>
-    [Tooltip("Displays the condition of the selected item inside the Item Panel in the Inventory menu.")]
-    public TextMeshProUGUI itemConditionText;
-    /// <summary>
-    /// Displays the rarity of the selected item inside the Item Panel in the Inventory menu.
-    /// </summary>
-    [Tooltip("Displays the rarity of the selected item inside the Item Panel in the Inventory menu.")]
-    public TextMeshProUGUI itemRarityText;
-    /// <summary>
-    /// Displays the buying price of the selected item inside the Item Panel in the Inventory menu.
-    /// </summary>
-    [Tooltip("Displays the buying price of the selected item inside the Item Panel in the Inventory menu.")]
-    public TextMeshProUGUI itemBuyingPriceText;
 
     [NonSerialized]
     //A dictionary containing a list of items in the inventory scriptable object, and their gameobjects on the canvas

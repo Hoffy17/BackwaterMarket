@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3400a07f91cf44ec895d0f584aa9cb28, type: 3}
-  m_Name: New Request
+  m_Script: {fileID: 11500000, guid: b7aabbbcb4c8e4cd0b03e88f78ca022f, type: 3}
+  m_Name: Buy Inventory
   m_EditorClassIdentifier: 
-  requesterName: 
-  requestMessage: 
-  requestedItem: 0
-  requestedCondition: 0
-  requestOffer: 0
-  requesterIsThief: 0
+  inventoryList: []

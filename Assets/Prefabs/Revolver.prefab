@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 9bba9c0bbba90496bb0eb992f1b84b74, type: 2}
+  playerInventoryDisplay: {fileID: 0}
+  buyInventoryDisplay: {fileID: 0}
   itemTypeText: {fileID: 0}
   itemArtwork: {fileID: 0}
   itemConditionText: {fileID: 0}
