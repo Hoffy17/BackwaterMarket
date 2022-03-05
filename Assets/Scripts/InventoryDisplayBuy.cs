@@ -53,8 +53,8 @@ public class InventoryDisplayBuy : InventoryDisplay
     {
         for (int i = 0; i < inventory.inventoryList.Count; i++)
         {
-            itemTypeList[i].text = inventory.inventoryList[i].item.type.ToString();
-            itemBuyingPriceList[i].text = inventory.inventoryList[i].item.buyingPrice.ToString("c2");
+            itemTypeList[i].text = inventory.inventoryList[i].type.ToString();
+            itemBuyingPriceList[i].text = inventory.inventoryList[i].buyingPrice.ToString("c2");
         }
     }
 }

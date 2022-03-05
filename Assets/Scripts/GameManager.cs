@@ -53,20 +53,7 @@ public class GameManager : MonoBehaviour
 
     #region Custom Functions
 
-    /// <summary>
-    /// Deducts the bought item's price from the player's balance.
-    /// </summary>
-    /// <remarks>
-    /// Called by the Buy button in the Buy menu.
-    /// </remarks>
-    /// <param name="boughtItem"></param>
-    public void Buy(ItemObject boughtItem)
-    {
-        balance -= boughtItem.buyingPrice;
-        PrintBalance();
-    }
-
-    private void PrintBalance()
+    public void PrintBalance()
     {
         balanceTMP.text = balance.ToString("c2");
     }

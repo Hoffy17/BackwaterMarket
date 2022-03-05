@@ -26,6 +26,7 @@ public class ItemDisplay : MonoBehaviour
     public InventoryDisplayBuy inventoryDisplayBuy;
 
     private GameManager gameManager;
+    private BuyController buyController;
 
     [Header("Item Panel GUI")]
 
@@ -38,7 +39,7 @@ public class ItemDisplay : MonoBehaviour
     /// Displays large artwork of the selected item inside the Item Panel in the Inventory menu.
     /// </summary>
     [Tooltip("Displays large artwork of the selected item inside the Item Panel in the Inventory menu.")]
-    public Image itemArtwork;
+    public Image itemLargeArtwork;
     /// <summary>
     /// Displays the condition of the selected item inside the Item Panel in the Inventory menu.
     /// </summary>
@@ -63,13 +64,14 @@ public class ItemDisplay : MonoBehaviour
     private void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        buyController = gameManager.GetComponent<BuyController>();
 
         if (gameManager.inventoryMenu.activeSelf == true)
         {
             inventoryDisplayPlayer = GameObject.FindGameObjectWithTag("Player Inventory").GetComponent<InventoryDisplayPlayer>();
 
             itemTypeText = inventoryDisplayPlayer.itemTypeText;
-            itemArtwork = inventoryDisplayPlayer.itemArtwork;
+            itemLargeArtwork = inventoryDisplayPlayer.itemArtwork;
             itemConditionText = inventoryDisplayPlayer.itemConditionText;
             itemRarityText = inventoryDisplayPlayer.itemRarityText;
             itemBuyingPriceText = inventoryDisplayPlayer.itemBuyingPriceText;
@@ -80,7 +82,7 @@ public class ItemDisplay : MonoBehaviour
             inventoryDisplayBuy = GameObject.FindGameObjectWithTag("Buy Inventory").GetComponent<InventoryDisplayBuy>();
 
             itemTypeText = inventoryDisplayBuy.itemTypeText;
-            itemArtwork = inventoryDisplayBuy.itemArtwork;
+            itemLargeArtwork = inventoryDisplayBuy.itemArtwork;
             itemConditionText = inventoryDisplayBuy.itemConditionText;
             itemRarityText = inventoryDisplayBuy.itemRarityText;
             itemBuyingPriceText = inventoryDisplayBuy.itemBuyingPriceText;
@@ -94,8 +96,10 @@ public class ItemDisplay : MonoBehaviour
 
     public void DisplayItem()
     {
+        buyController.selectedItem = item;
+
         itemTypeText.text = item.type.ToString();
-        itemArtwork.sprite = item.artwork;
+        itemLargeArtwork.sprite = item.largeArtwork;
         itemConditionText.text = $"Condition: {item.condition.ToString()}%";
         itemRarityText.text = $"Rarity: {item.rarity.ToString()}";
         itemBuyingPriceText.text = $"Buying Price: {item.buyingPrice.ToString("c2")}";

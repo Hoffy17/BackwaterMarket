@@ -15,7 +15,7 @@ public class InventoryObject : ScriptableObject
     /// A list of <see cref="ItemObject"/> assets held in an <see cref="InventoryObject"/> asset.
     /// </summary>
     [Tooltip("A list of ItemObject assets held in an inventory asset.")]
-    public List<InventorySlot> inventoryList = new List<InventorySlot>();
+    public List<ItemObject> inventoryList = new List<ItemObject>();
 
     /// <summary>
     /// Adds an <see cref="ItemObject"/> to the <see cref="InventoryObject"/> data file.
@@ -23,22 +23,8 @@ public class InventoryObject : ScriptableObject
     /// <param name="addedItem"></param>
     public void AddItem(ItemObject addedItem)
     {
-        inventoryList.Add(new InventorySlot(addedItem));
+        inventoryList.Add(addedItem);
     }
 }
 
 #endregion
-
-/// <summary>
-/// A container that holds a single <see cref="ItemObject"/> in an <see cref="InventoryObject"/>.
-/// </summary>
-[Serializable]
-public class InventorySlot
-{
-    public ItemObject item;
-
-    public InventorySlot(ItemObject addedItem)
-    {
-        item = addedItem;
-    }
-}

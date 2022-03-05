@@ -37,4 +37,9 @@ public class InventoryDisplayPlayer : InventoryDisplay
     public TextMeshProUGUI itemBuyingPriceText;
 
     #endregion
+
+    private void OnApplicationQuit()
+    {
+        inventory.inventoryList.Clear();
+    }
 }
