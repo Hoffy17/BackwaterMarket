@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7aabbbcb4c8e4cd0b03e88f78ca022f, type: 3}
   m_Name: Buy Inventory
   m_EditorClassIdentifier: 
-  inventoryList: []
+  inventoryList:
+  - {fileID: 11400000, guid: 9bba9c0bbba90496bb0eb992f1b84b74, type: 2}

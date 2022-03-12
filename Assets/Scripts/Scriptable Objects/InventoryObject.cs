@@ -25,6 +25,15 @@ public class InventoryObject : ScriptableObject
     {
         inventoryList.Add(addedItem);
     }
+
+    /// <summary>
+    /// Removes an <see cref="ItemObject"/> from the <see cref="InventoryObject"/> data file.
+    /// </summary>
+    /// <param name="removedItem"></param>
+    public void RemoveItem(ItemObject removedItem)
+    {
+        inventoryList.Remove(removedItem);
+    }
 }
 
 #endregion

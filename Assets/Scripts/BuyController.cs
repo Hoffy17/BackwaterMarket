@@ -24,7 +24,7 @@ public class BuyController : MonoBehaviour
         {
             if (buyInventory.inventoryList[i] = selectedItem)
             {
-                buyInventory.inventoryList.Remove(buyInventory.inventoryList[i]);
+                buyInventory.RemoveItem(buyInventory.inventoryList[i]);
                 AddToInventory();
             }
         }

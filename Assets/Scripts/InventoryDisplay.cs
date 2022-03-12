@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class InventoryDisplay : MonoBehaviour
 {
-    #region Declarations
+    #region Public Declarations
 
     [Tooltip("The Inventory Object asset associated with this game object.")]
     [SerializeField]
@@ -53,7 +53,9 @@ public class InventoryDisplay : MonoBehaviour
     public void UpdateDisplay()
     {
         for (int i = 0; i < inventory.inventoryList.Count; i++)
+        {
             AddItem(i);
+        }
     }
 
     private void AddItem(int i)

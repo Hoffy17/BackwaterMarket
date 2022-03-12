@@ -20,11 +20,15 @@ public class GameManager : MonoBehaviour
     [Tooltip("How much balance the player begins the game session with.")]
     [SerializeField]
     private float startingBalance;
+    [Tooltip("How much balance the player must achieve to win the game.")]
+    [SerializeField]
+    public float endingBalance;
+
+    [Header("UI")]
+
     [SerializeField]
     [Tooltip("The TextMeshPro text component that displays the player's balance.")]
     private TMP_Text balanceTMP;
-
-    [Header("UI")]
 
     /// <summary>
     /// The <see cref="GameObject"/> containing the Buy menu and its children.
