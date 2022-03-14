@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7119bd1a2b424388859de2a55af88bf, type: 3}
   m_Name: Watch
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2238969110419323108, guid: 4f563e90cdb98406ea03b444fa1246d4, type: 3}
-  type: 7
-  smallArtwork: {fileID: 21300000, guid: b62790938e00b4c9a829835422c15c5b, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 1007e9115dfc740ee82b1133280ea355, type: 3}
-  condition: 100
-  rarity: 0
-  buyingPrice: 1.5
+  type: 5
+  sprite: {fileID: 21300000, guid: b62790938e00b4c9a829835422c15c5b, type: 3}
+  ID: 5
+  baseValue: 5

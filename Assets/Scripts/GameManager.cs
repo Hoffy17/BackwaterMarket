@@ -1,66 +1,55 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Handles the game's primary operations, including balance.
+/// Handles the win and lose conditions for the game.
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    #region Declarations
-
+    #region Public Variables
     [Header("Balance")]
-
-    /// <summary>
-    /// How much money the player is currently holding.
-    /// </summary>
-    [Tooltip("How much money the player is currently holding.")]
+    [Tooltip("How much money the player is holding at any one time.")]
+    [SerializeField]
     public float balance;
-    [Tooltip("How much balance the player begins the game session with.")]
+    [Tooltip("How much balance the player begins the game with.")]
     [SerializeField]
     private float startingBalance;
     [Tooltip("How much balance the player must achieve to win the game.")]
     [SerializeField]
-    public float endingBalance;
+    public float winningBalance;
 
     [Header("UI")]
-
     [SerializeField]
-    [Tooltip("The TextMeshPro text component that displays the player's balance.")]
-    private TMP_Text balanceTMP;
-
+    [Tooltip("Displays the player's current balance.")]
+    private TextMeshProUGUI balanceText;
     /// <summary>
-    /// The <see cref="GameObject"/> containing the Buy menu and its children.
+    /// Used for checking whether a win or lose condition has been met.
     /// </summary>
-    [Tooltip("The game object containing the Buy menu and its children.")]
-    public GameObject buyMenu;
-    /// <summary>
-    /// The <see cref="GameObject"/> containing the Inventory menu and its children.
-    /// </summary>
-    [Tooltip("The game object containing the Inventory menu and its children.")]
-    public GameObject inventoryMenu;
-
+    [HideInInspector]
+    public bool gameOver;
     #endregion
 
+    #region Hidden Variables
+    #endregion
 
     #region Unity Functions
-
-    private void Start()
+    private void Awake()
     {
         balance = startingBalance;
         PrintBalance();
     }
-
     #endregion
 
-
+    /// <summary>
+    /// Update the player's current balance on the user interface.
+    /// </summary>
     #region Custom Functions
-
     public void PrintBalance()
     {
-        balanceTMP.text = balance.ToString("c2");
+        balanceText.text = balance.ToString("c2");
     }
-
     #endregion
 }

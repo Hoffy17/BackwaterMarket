@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7119bd1a2b424388859de2a55af88bf, type: 3}
   m_Name: Revolver
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2238969110419323108, guid: 4f563e90cdb98406ea03b444fa1246d4, type: 3}
-  type: 4
-  smallArtwork: {fileID: 21300000, guid: f98ff74de1fd6453090b4beb606bfcf5, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 8068082c289264dab93ca507bcf5a001, type: 3}
-  condition: 100
-  rarity: 0
-  buyingPrice: 1.5
+  type: 2
+  sprite: {fileID: 21300000, guid: f98ff74de1fd6453090b4beb606bfcf5, type: 3}
+  ID: 2
+  baseValue: 4.5
