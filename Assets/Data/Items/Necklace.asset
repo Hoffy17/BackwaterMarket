@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Necklace
   m_EditorClassIdentifier: 
   type: 1
-  sprite: {fileID: 21300000, guid: dba1c090d1f394bfa970b18e75915cee, type: 3}
+  smallSprite: {fileID: 21300000, guid: dba1c090d1f394bfa970b18e75915cee, type: 3}
+  largeSprite: {fileID: 21300000, guid: b9122fb6246f1458a87c9ff3d6e1f6d1, type: 3}
   ID: 1
   baseValue: 8

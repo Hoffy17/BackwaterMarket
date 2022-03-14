@@ -29,7 +29,7 @@ public class Item : MonoBehaviour
     {
         itemValue = itemObject.baseValue;
 
-        gameObject.GetComponentInChildren<Image>().sprite = itemObject.sprite;
+        gameObject.GetComponentInChildren<Image>().sprite = itemObject.smallSprite;
         itemTypeText.text = itemObject.type.ToString();
         itemBuyingPriceText.text = itemValue.ToString("c2");
     }
@@ -38,5 +38,13 @@ public class Item : MonoBehaviour
     {
         buyMenu.buyMenuSelector.SetActive(true);
         buyMenu.buyMenuSelector.transform.position = gameObject.transform.position;
+
+        ItemPanel itemPanel = buyMenu.buyMenuItemPanel;
+
+        itemPanel.panelItemArtwork.sprite = itemObject.largeSprite;
+        itemPanel.panelItemTypeText.text = itemObject.type.ToString();
+        itemPanel.panelItemBuyingPriceText.text = itemValue.ToString("c2");
+        itemPanel.panelItemConditionText.text = $"Condition: {itemCondition}%";
+        itemPanel.panelItemRarityText.text = $"Rarity: {itemRarity}";
     }
 }

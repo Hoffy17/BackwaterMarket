@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DiamondRing
   m_EditorClassIdentifier: 
   type: 0
-  sprite: {fileID: 21300000, guid: d4fc6a44c3ad540f28f74b5a3bbb9776, type: 3}
+  smallSprite: {fileID: 21300000, guid: d4fc6a44c3ad540f28f74b5a3bbb9776, type: 3}
+  largeSprite: {fileID: 21300000, guid: 1007e9115dfc740ee82b1133280ea355, type: 3}
   ID: 0
   baseValue: 10

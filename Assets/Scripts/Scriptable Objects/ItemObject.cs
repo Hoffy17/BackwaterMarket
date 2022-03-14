@@ -20,7 +20,8 @@ public class ItemObject : ScriptableObject
 {
     [Tooltip("The kind of item.")]
     public ItemType type;
-    public Sprite sprite;
+    public Sprite smallSprite;
+    public Sprite largeSprite;
     public int ID;
     [Tooltip("The base value of any individual item before any multipliers are calculated.")]
     public float baseValue;

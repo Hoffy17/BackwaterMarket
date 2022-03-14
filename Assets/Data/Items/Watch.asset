@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Watch
   m_EditorClassIdentifier: 
   type: 5
-  sprite: {fileID: 21300000, guid: b62790938e00b4c9a829835422c15c5b, type: 3}
+  smallSprite: {fileID: 21300000, guid: b62790938e00b4c9a829835422c15c5b, type: 3}
+  largeSprite: {fileID: 21300000, guid: b5a39d923c34e41c8a0181719db0393b, type: 3}
   ID: 5
   baseValue: 5

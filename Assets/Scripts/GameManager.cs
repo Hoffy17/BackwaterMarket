@@ -32,9 +32,6 @@ public class GameManager : MonoBehaviour
     public bool gameOver;
     #endregion
 
-    #region Hidden Variables
-    #endregion
-
     #region Unity Functions
     private void Awake()
     {

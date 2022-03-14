@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SnakeOil
   m_EditorClassIdentifier: 
   type: 4
-  sprite: {fileID: 21300000, guid: 14264c2cc45854f448ee565e3483731b, type: 3}
+  smallSprite: {fileID: 21300000, guid: 14264c2cc45854f448ee565e3483731b, type: 3}
+  largeSprite: {fileID: 21300000, guid: dd0de0ca2a5494f839233d587172dd4b, type: 3}
   ID: 4
   baseValue: 6

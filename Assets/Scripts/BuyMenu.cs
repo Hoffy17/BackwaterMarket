@@ -10,6 +10,7 @@ public class BuyMenu : MonoBehaviour
 
     [Header("UI")]
     public GameObject buyMenuSelector;
+    public ItemPanel buyMenuItemPanel;
 
     private void OnEnable()
     {

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Revolver
   m_EditorClassIdentifier: 
   type: 2
-  sprite: {fileID: 21300000, guid: f98ff74de1fd6453090b4beb606bfcf5, type: 3}
+  smallSprite: {fileID: 21300000, guid: f98ff74de1fd6453090b4beb606bfcf5, type: 3}
+  largeSprite: {fileID: 21300000, guid: 8068082c289264dab93ca507bcf5a001, type: 3}
   ID: 2
   baseValue: 4.5
