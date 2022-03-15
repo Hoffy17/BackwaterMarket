@@ -10,30 +10,18 @@ public class Item : MonoBehaviour
     public ItemObject itemObject;
     public float itemValue;
     public float itemCondition;
-    public float itemRarityMultipler;
+    public float itemRarityMultiplier;
     public string itemRarityLabel;
 
     private BuyController buyController;
     private BuyMenu buyMenu;
 
-    [SerializeField]
     private TextMeshProUGUI itemTypeText;
-    [SerializeField]
     private TextMeshProUGUI itemBuyingPriceText;
 
     private void Awake()
     {
-        GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
-
-        buyController = gameController.GetComponent<BuyController>();
         buyMenu = transform.parent.GetComponent<BuyMenu>();
-
-        itemCondition = UnityEngine.Random.value;
-        int itemRarityValue = UnityEngine.Random.Range(0, 101);
-
-        RarityCalculcator(itemRarityValue);
-
-        GetTMPComponents();
     }
 
     private void GetTMPComponents()
@@ -42,22 +30,34 @@ public class Item : MonoBehaviour
         itemBuyingPriceText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
     }
 
+    public void BuyingPriceCalculator()
+    {
+        GameObject gameController = GameObject.FindGameObjectWithTag("GameController");
+        buyController = gameController.GetComponent<BuyController>();
+
+        itemCondition = UnityEngine.Random.value;
+        int itemRarityValue = UnityEngine.Random.Range(0, 101);
+        RarityCalculcator(itemRarityValue);
+
+        itemValue = itemObject.baseValue * buyController.buyMultipler * itemCondition * itemRarityMultiplier;
+
+        PrintData();
+    }
+
     private void RarityCalculcator(int rarity)
     {
         for (int i = 0; i < buyController.rarityThresholds.Length; i++)
         {
             if (rarity >= buyController.rarityThresholds[i])
             {
-                itemRarityMultipler = buyController.rarityMultipliers[i];
+                itemRarityMultiplier = buyController.rarityMultipliers[i];
                 itemRarityLabel = buyController.rarityLabels[i];
             }
         }
     }
 
-    public void PrintData()
+    private void PrintData()
     {
-        itemValue = itemObject.baseValue;
-
         GetTMPComponents();
 
         gameObject.GetComponentInChildren<Image>().sprite = itemObject.smallSprite;

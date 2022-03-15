@@ -21,18 +21,20 @@ public class BuyMenu : MonoBehaviour
 
         for (int i = 0; i < itemSlots.Count; i++)
         {
+            Item item = itemSlots[i].GetComponent<Item>();
+
             int randomID = UnityEngine.Random.Range(0, itemTemplates.Count);
 
             for (int j = 0; j < itemTemplates.Count; j++)
             {
                 if (randomID == itemTemplates[j].ID)
                 {
-                    itemSlots[i].GetComponent<Item>().itemObject = itemTemplates[j];
+                    item.itemObject = itemTemplates[j];
                     break;
                 }
             }
 
-            itemSlots[i].GetComponent<Item>().PrintData();
+            item.BuyingPriceCalculator();
         }
     }
 
