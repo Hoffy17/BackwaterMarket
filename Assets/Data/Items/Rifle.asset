@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   smallSprite: {fileID: 21300000, guid: 43c1595ff4c11473194ce5d4017d7163, type: 3}
-  largeSprite: {fileID: 21300000, guid: 1007e9115dfc740ee82b1133280ea355, type: 3}
+  largeSprite: {fileID: 21300000, guid: 4e6cdce382f440b46b39389c9efbc4a8, type: 3}
   ID: 3
   baseValue: 9

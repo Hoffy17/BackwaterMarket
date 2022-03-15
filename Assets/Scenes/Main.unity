@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273175, g: 0.13414773, b: 0.121078864, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1598,6 +1598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 809940853}
   - component: {fileID: 809940854}
+  - component: {fileID: 809940855}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -1636,6 +1637,29 @@ MonoBehaviour:
   winningBalance: 250
   balanceText: {fileID: 1919322633}
   gameOver: 0
+--- !u!114 &809940855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809940852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e916bab0b442c334a90c9b0eb16d4dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rarityThresholds: 000000003c0000005a00000064000000
+  rarityMultipliers:
+  - 1
+  - 2
+  - 5
+  - 10
+  rarityLabels:
+  - Common
+  - Uncommon
+  - Rare
+  - Unique
 --- !u!224 &817978430 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8580666749715512016, guid: da4af5e0433a842f2ac916e7774664bf, type: 3}
